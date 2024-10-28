@@ -31,7 +31,7 @@
             <input type="checkbox" class="form-check-input uf-form-check-input" id="exampleCheck1">
             <label class="form-check-label text-white" for="exampleCheck1">Remember Me</label>
           </div>
-          <a href="javascript:alert('Drink Some Water and Try to Remember password... or just create a new account its free and you can always change your mind (Hitesh Use your Domain Expansion to fix this Pls...)');">Forgot password?</a>
+          <a href="forgor.php">Forgot password?</a>
         </div>
         <div class="d-grid mb-4">
           <input type="submit" class="btn uf-btn-primary btn-lg" value="Login" name="signIn">
