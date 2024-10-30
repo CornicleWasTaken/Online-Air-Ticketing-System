@@ -15,8 +15,8 @@ if(isset($_POST['signUp'])){
         echo "Email Address Already Exists !";
      }
      else{
-        $insertQuery="INSERT INTO users(firstName,lastName,email,password)
-                       VALUES ('$firstName','$lastName','$email','$password');";
+        $insertQuery="INSERT INTO users(firstName,lastName,email,password,role)
+                       VALUES ('$firstName','$lastName','$email','$password','USER')";
             if($conn->query($insertQuery)==TRUE){
                 header("location: index.php");
             }
@@ -33,15 +33,25 @@ if(isset($_POST['signIn'])){
    $password=$_POST['password'];
    $password=md5($password);
    
-   $sql="SELECT * FROM users WHERE email='$email' and password='$password';";
+   $sql="SELECT * FROM users WHERE email='$email' and password='$password'";
    $result=$conn->query($sql); 
    if($result->num_rows>0){
-    session_start();
-    $row=$result->fetch_assoc();
-    $_SESSION['email']=$row['email'];
-    header("Location: homepage.php");
-    exit();
+    $sql2="SELECT * FROM users WHERE email='$email' and role='ADMN'";
+    $result2=$conn->query($sql2);
+    $sql3="SELECT * FROM users WHERE email='$email' and role='USER'";
+    $result3=$conn->query($sql3);
+        if ($result2->num_rows> 0){
+            session_start();
+            header("Location: homepageadmin.php");
+            exit();
+        }
+        elseif ($result3->num_rows>0) {
+            session_start();
+            header("Location: homepage.php");
+            exit();
+        }
    }
+
    else{
     echo "Not Found, Incorrect Email or Password";
    }

@@ -1,10 +1,10 @@
 <?php
+include 'connect.php';
 if (isset($_POST['flightSearch'])) {
     $from = $_POST['from'];
     $to = $_POST['to'];
     $date = $_POST['date'];
 
-    $conn = new mysqli('localhost', 'root', 'root', 'oats');
 
     if ($conn->connect_error) {
         die("Connection failed: " . $conn->connect_error);
