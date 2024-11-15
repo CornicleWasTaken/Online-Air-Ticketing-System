@@ -60,6 +60,7 @@
                     echo '<td>' . $row["to_city"] . '</td>';
                     echo '<td>' . $row["date"] . '</td>';
                     echo '<td>' . $row["seats_available"] . '</td>';
+                    echo '<td> <button onclick="book()"> BOOK </button> </td>';
                     echo '</tr>';
                 }
                 echo '</tbody></table></div>';

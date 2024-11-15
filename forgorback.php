@@ -52,7 +52,18 @@ if (isset($_POST['forgot'])) {
             echo "Error updating record: " . $conn->error;
         }
     } else {
-        echo "No user found with that email address.";
+        echo '
+        <script type="text/Javascript">
+            if (confirm("Error: No Email found with that Password.") == true){
+                location.replace("http://localhost/oats/forgorback.php");
+            }
+            else{
+                location.replace("http://localhost/oats/forgorback.php");
+            }
+        ';
+        
+
+        
     }
 
     $conn->close();

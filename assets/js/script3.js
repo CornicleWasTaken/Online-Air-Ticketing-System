@@ -19,3 +19,7 @@ $(document).ready(function() {
     });
 });
 
+function myfunc(){
+    location.replace("http://localhost/oats/manager.php");
+}
+

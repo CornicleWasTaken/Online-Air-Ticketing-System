@@ -8,6 +8,11 @@
 
 </head>
 <body>
+    <script>
+        function myfunc(){
+            location.replace("http://localhost/oats/manager.php");
+        }
+    </script>
     <div class="container">
         <header class="my-4">
             <h1 class="text-center">Welcome to Air Ticketing System</h1>
@@ -27,13 +32,13 @@
                     <input type="date" id="date" name="date" class="form-control" required>
                 </div>
                 <button type="submit" class="btn btn-primary mx-2">Search Flights</button>
-                <button type="button" class="btn btn-primary mx-2" name="">Admin Control</button>
+                <button type="button" class="btn btn-primary mx-2" onclick="myfunc()">Admin Control</button>
             </form>
             <div id="results" class="mt-4"></div>
         </main>
     </div>
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-    <script src="./assets/js/script2.js"></script>
+    <script src="./assets/js/script3.js"></script>
 
 
 </body>

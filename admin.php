@@ -18,12 +18,22 @@
                 echo '<div class="table-responsive"><table class="table table-striped">';
                 echo '<thead><tr><th>Flight Number</th><th>From</th><th>To</th><th>Date</th><th>Seats Available</th></tr></thead><tbody>';
                 while($row = $result->fetch_assoc()) {
+                    echo '<script type=text/Javascript> function book(){
+                    if (confirm("Error: This Feature has not been implemented yet") == true){
+                        location.replace("http://localhost/oats/manager.php");
+                    }
+                    else{
+                        location.replace("http://localhost/oats/manager.php");
+                    }
+                    }
+                    </script>';
                     echo '<tr>';
                     echo '<td>' . $row["flight_number"] . '</td>';
                     echo '<td>' . $row["from_city"] . '</td>';
                     echo '<td>' . $row["to_city"] . '</td>';
                     echo '<td>' . $row["date"] . '</td>';
                     echo '<td>' . $row["seats_available"] . '</td>';
+                    echo '<td> <button onclick="book()"> BOOK </button> </td>';
                     echo '</tr>';
                 }
                 echo '</tbody></table></div>';
@@ -36,6 +46,6 @@
         }
 
         elseif (isset( $_POST['admin'])) {
-            header('location: manager.php');
+            header('Location: manager.php');
         }
     ?>
