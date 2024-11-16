@@ -37,7 +37,7 @@
             <h1>Insert Flight Details</h1>
         </header>
         <main>
-            <form action="insert_flight.php" method="post">
+            <form action="manager.php" method="post">
                 <div class="form-group">
                     <label for="flight_number">Flight Number:</label>
                     <input type="text" id="flight_number" name="flight_number" class="form-control" required>
